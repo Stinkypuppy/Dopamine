@@ -32,6 +32,16 @@ jobs:
           repository: opa334/opainject
           path: BaseBin/opainject
 
+      - name: Pre theos
+        run: |
+          brew install ldid 
+          brew install make 
+          brew install findutils 
+          brew install coreutils 
+          brew install xz-utils
+          brew install theos
+          brew install clang
+
       - name: Bootstrap Procursus
         uses: w2599/procursus-action@main
         with:

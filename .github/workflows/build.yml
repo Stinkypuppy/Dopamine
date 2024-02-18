@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          brew install libarchive ldid make findutils coreutils xz-utils
+          brew install libarchive ldid make findutils coreutils xcb-util
 
       - name: Bootstrap Procursus
         uses: w2599/procursus-action@main

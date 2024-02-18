@@ -38,7 +38,7 @@ jobs:
           brew install make 
           brew install findutils 
           brew install coreutils 
-          brew install xz-utils
+          brew install xcb-utils
           brew install theos
           brew install clang
 

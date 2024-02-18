@@ -98,7 +98,7 @@ jobs:
       # - name: Pre xcode-select
       #   run: |
 
-      - name: Build tipa
+      - name: Build and Link
         run: |
           set -x
           export THEOS=$HOME/theos
@@ -106,8 +106,18 @@ jobs:
           cd Application/Dopamine/Resources
           bash download_bootstraps.sh
           cd $GITHUB_WORKSPACE
-          make CFLAGS="-I/usr/local/opt/libarchive/include" LDFLAGS="-L/usr/local/opt/libarchive/lib"
-          mv Application/Dopamine.tipa Dopamine_${{ env.VERSION }}_${{ env.msT }}.tipa
+          # Make sure to rebuild any dependencies for the correct architecture here
+          make CFLAGS="-I/usr/local/opt/libarchive/include" LDFLAGS="-L/usr/local/opt/libarchive/lib -v"
+          mv Application/Dopamine.tipa Dopamine_${VERSION}_${msT}.tipa
+        env:
+          VERSION: 2.0.5.1
+          BUNDLEID: com.zqbb.Dopamine
+          CPATH: :/opt/procursus/include
+          LIBRARY_PATH: :/opt/procursus/lib
+          msT: 1708251861
+          shT: 2024.02.18/18.24.21
+          logT: 2024年02月18 18:24:21
+          shell: /bin/bash -e {0}
 
       - name: Release
         uses: softprops/action-gh-release@v1

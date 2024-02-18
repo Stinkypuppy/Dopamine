@@ -39,7 +39,6 @@ jobs:
           brew install findutils 
           brew install coreutils 
           brew install xcb-util
-          brew install clang
           bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
 
       - name: Bootstrap Procursus

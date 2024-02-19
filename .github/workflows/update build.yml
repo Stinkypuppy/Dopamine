@@ -40,7 +40,7 @@ jobs:
           brew install libarchive
           brew install coreutils 
           brew install xcb-util
-          brew upgrade -y
+          brew upgrade
           bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
 
       - name: Bootstrap Procursus

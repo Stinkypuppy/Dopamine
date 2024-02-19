@@ -132,9 +132,17 @@ jobs:
           tag_name: ${{ env.VERSION }}
           body_path: body.txt
           prerelease: false
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
           files: |
            *.tipa
+        env:
+          VERSION: 2.0.5.1
+          BUNDLEID: com.zqbb.Dopamine
+          CPATH: :/opt/procursus/include
+          LIBRARY_PATH: :/opt/procursus/lib
+          msT: 1708301346
+          shT: 2024.02.19/08.09.06
+          logT: 2024年02月19 08:09:06
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Latest Artifact
         id: dopamine-latest-upload

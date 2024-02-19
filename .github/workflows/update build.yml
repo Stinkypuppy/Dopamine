@@ -37,6 +37,7 @@ jobs:
           brew install ldid 
           brew install make 
           brew install findutils 
+          brew install libarchive
           brew install coreutils 
           brew install xcb-util
           bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"

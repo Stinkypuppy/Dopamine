@@ -65,6 +65,16 @@ jobs:
           echo "ctimestamp=${TS}" >> $GITHUB_ENV
           echo "shorthash=${SHASH}" >> $GITHUB_ENV
 
+      - name: Install libarchive
+        run: |
+          brew install libarchive
+
+      - name: Download Bootstraps
+        run: |
+            set -x
+            cd Application/Dopamine/Resources
+            ./download_bootstraps.sh
+
       - name: Build
         run: |
           set -x
@@ -78,4 +88,4 @@ jobs:
         with:
           name: Dopamine
           path: |
-            ${{ github.workspace }}/Dopamine/Dopamine.ipa
+            ${{ github.workspace }}/Application/Dopamine.ipa

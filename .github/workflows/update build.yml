@@ -34,7 +34,7 @@ jobs:
 
       - name: Pre theos
         run: |
-          brew install make findutils coreutils xz-utils libarchive node libpq cmake python php git
+          brew install make findutils coreutils libarchive node libpq cmake python3
           if [ -f '/usr/local/bin/2to3-3.12' ]; then
             rm '/usr/local/bin/2to3-3.12'
           fi
